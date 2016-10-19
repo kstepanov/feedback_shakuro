@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
+
+gem 'sqlite3', group: [:development, :test]
+gem 'mysql2', '~> 0.4.4', group: :production
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -15,6 +17,8 @@ gem 'turbolinks', '~> 5'
 gem 'activeadmin', github: 'activeadmin', branch: :master
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise', '~> 4.2'
+
+gem 'foreman', '~> 0.63.0', require: false, group: :production
 
 group :development, :test do
   gem 'pry-rails'

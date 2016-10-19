@@ -17,6 +17,7 @@ set :keep_releases, 3
 
 set :shared_paths, (lambda do
   [
+    'config/database.yml',
     'config/secrets.yml',
     "config/puma_#{rails_env}.rb",
     'log',
@@ -77,8 +78,6 @@ end
 desc 'Deploys the current version to the server.'
 task deploy: :environment do
   deploy do
-    # Put things that will set up an empty directory into a fully set-up
-    # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
@@ -87,14 +86,7 @@ task deploy: :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      mina :'puma:phased_restart'
+      invoke :'puma:phased_restart'
     end
   end
 end
-
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
