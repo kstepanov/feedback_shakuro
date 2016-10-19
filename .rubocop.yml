@@ -1,0 +1,27 @@
+# https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+require: rubocop-rspec
+
+Rails:
+  Enabled: true
+Metrics/LineLength:
+  Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 12
+Lint/EndAlignment:
+  AlignWith: variable
+CaseIndentation:
+  IndentWhenRelativeTo: end
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Style/DotPosition:
+  EnforcedStyle: trailing
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Style/FrozenStringLiteralComment:
+  Enabled: false
