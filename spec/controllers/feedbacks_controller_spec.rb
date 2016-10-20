@@ -10,7 +10,7 @@ RSpec.describe FeedbacksController, type: :controller do
 
   describe 'GET #new' do
     it 'assigns a new feedback as @feedback' do
-      get :new
+      get :new, params: { uid: request.uid }
       expect(assigns(:feedback)).to be_a_new(Feedback)
     end
   end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'feedbacks/new', type: :view do
   before do
-    assign(:feedback, build(:feedback))
+    assign(:feedback, build(:feedback, request: build(:request)))
     render
   end
 

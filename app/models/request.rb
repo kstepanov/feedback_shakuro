@@ -7,8 +7,10 @@ class Request < ApplicationRecord
 
   class << self
     def uid
-      code = RandomCode.numeric(8) while exists?(uid: code)
-      code
+      loop do
+        code = RandomCode.numeric(8)
+        break code unless exists?(uid: code)
+      end
     end
   end
 
