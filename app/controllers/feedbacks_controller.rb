@@ -1,9 +1,13 @@
 class FeedbacksController < InheritedResources::Base
   attr_reader :feedback
 
+  def new
+    @feedback = Feedback.new(request: uid_request)
+  end
+
   def create
     @feedback = Feedback.new(feedback_params)
-    feedback.attributes = Request.find_by(uid: uid).feedback_attributes
+    feedback.request = uid_request
 
     if feedback.save
       redirect_to thank_you_path
@@ -18,7 +22,11 @@ class FeedbacksController < InheritedResources::Base
     params.require(:feedback).permit(:rate, :details)
   end
 
+  def uid_request
+    @uid_request ||= Request.find_by!(uid: uid)
+  end
+
   def uid
-    @uid ||= params.require(:uid)
+    params[:uid].presence || not_found
   end
 end

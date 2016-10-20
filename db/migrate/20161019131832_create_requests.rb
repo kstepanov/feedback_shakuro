@@ -10,5 +10,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_index :requests, :uid
   end
 end
