@@ -1,4 +1,7 @@
 class Request < ApplicationRecord
+
+
+
   belongs_to :admin_user
   has_many :feedbacks, dependent: :nullify
 
@@ -16,5 +19,23 @@ class Request < ApplicationRecord
 
   def feedback_attributes
     slice(:customer_name, :customer_email, :project_name, :feature_name)
+  end
+
+
+  "sadfsdf"
+
+
+  def test a,b,c,d,e
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
+    a.a + a.a + a.a
   end
 end
