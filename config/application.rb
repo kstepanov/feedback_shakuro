@@ -1,15 +1,15 @@
 require_relative 'boot'
-
 require 'rails/all'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module ShakuroFeedback
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    paths = [
+      Rails.root.join('lib').to_s
+    ]
+
+    config.autoload_paths += paths
+    config.eager_load_paths += paths
   end
 end

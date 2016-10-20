@@ -1,0 +1,22 @@
+= form_for @req do |f|
+  - if @req.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@req.errors.count, "error")} prohibited this request from being saved:"
+      ul
+        - @req.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :project_name
+    = f.text_field :project_name
+  .field
+    = f.label :feature_name
+    = f.text_field :feature_name
+  .field
+    = f.label :customer_name
+    = f.text_field :customer_name
+  .field
+    = f.label :customer_email
+    = f.text_field :customer_email
+
+  .actions = f.submit

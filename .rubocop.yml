@@ -1,6 +1,21 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 require: rubocop-rspec
 
+AllCops:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/20161019123400_devise_create_admin_users.rb
+
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Metrics/BlockLength:
+  Exclude:
+    - app/admin/*
+    - spec/**/*_spec.rb
+
 Rails:
   Enabled: true
 Metrics/LineLength:
