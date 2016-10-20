@@ -1,0 +1,41 @@
+# Copy of .rubocop.yml file without including rubocop-rspec
+
+AllCops:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/20161019123400_devise_create_admin_users.rb
+
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Metrics/BlockLength:
+  Exclude:
+    - app/admin/*
+    - spec/**/*_spec.rb
+
+Rails:
+  Enabled: true
+Metrics/LineLength:
+  Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 12
+Lint/EndAlignment:
+  AlignWith: variable
+CaseIndentation:
+  IndentWhenRelativeTo: end
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Style/DotPosition:
+  EnforcedStyle: trailing
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Style/FrozenStringLiteralComment:
+  Enabled: false
