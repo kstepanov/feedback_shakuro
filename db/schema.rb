@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019131832) do
+ActiveRecord::Schema.define(version: 20161019131126) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -21,9 +24,9 @@ ActiveRecord::Schema.define(version: 20161019131832) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -39,8 +42,8 @@ ActiveRecord::Schema.define(version: 20161019131832) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admin_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20161019131832) do
     t.text     "details"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["request_id"], name: "index_feedbacks_on_request_id"
+    t.index ["request_id"], name: "index_feedbacks_on_request_id", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
@@ -65,8 +68,10 @@ ActiveRecord::Schema.define(version: 20161019131832) do
     t.string   "uid"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["admin_user_id"], name: "index_requests_on_admin_user_id"
-    t.index ["uid"], name: "index_requests_on_uid"
+    t.index ["admin_user_id"], name: "index_requests_on_admin_user_id", using: :btree
+    t.index ["uid"], name: "index_requests_on_uid", using: :btree
   end
 
+  add_foreign_key "feedbacks", "requests"
+  add_foreign_key "requests", "admin_users"
 end

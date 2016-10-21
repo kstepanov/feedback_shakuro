@@ -37,7 +37,9 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  config.action_mailer.default_url_options = { host: 'http://feedback.shakuro.com' }
+  config.action_controller.asset_host = 'http://127.0.0.1:56120'
+  config.action_mailer.default_url_options = { host: 'http://127.0.0.1', port: 56_120 }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

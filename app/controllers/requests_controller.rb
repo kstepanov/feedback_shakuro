@@ -8,13 +8,12 @@ class RequestsController < InheritedResources::Base
   end
 
   def create
-    @req = Request.new(request_params)
-    req.uid = Request.uid
+    creator = RequestCreator.new(request_params, current_admin_user)
 
-    if req.save
-      RequestMailer.send_request(req).deliver_later
+    if creator.create
       redirect_to new_request_path, flash: { notice: 'Request sucessfully sent' }
     else
+      @req = creator.request
       render :new
     end
   end

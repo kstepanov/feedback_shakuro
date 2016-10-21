@@ -2,7 +2,7 @@ class Request < ApplicationRecord
   belongs_to :admin_user
   has_many :feedbacks, dependent: :nullify
 
-  validates :customer_name, :customer_email, :project_name, :feature_name, presence: true
+  validates :project_name, :feature_name, :customer_name, :customer_email, presence: true
   validates :customer_email, format: { with: /.+@.+\..+/ }
 
   class << self
