@@ -6,7 +6,7 @@ RSpec.describe FeedbackMailer, type: :mailer do
 
     let(:admin_user) { build(:admin_user) }
     let(:req) { build(:request, admin_user: admin_user) }
-    let(:feedback) { build(:feedback, request: req, rate: 12345) }
+    let(:feedback) { build(:feedback, request: req) }
 
     it 'has wright `subject` header' do
       expect(mail.subject).to eq(
