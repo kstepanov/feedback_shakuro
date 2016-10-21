@@ -35,11 +35,6 @@ RSpec.describe RequestsController, type: :controller do
         expect { do_request }.to change(Request, :count).by(1)
       end
 
-      it 'assigns a newly created request as @req' do
-        do_request
-        expect(assigns(:req)).to eq Request.last
-      end
-
       it 'redirects to the new request path' do
         do_request
         expect(response).to redirect_to new_request_path
@@ -48,16 +43,6 @@ RSpec.describe RequestsController, type: :controller do
       it 'shows flash message' do
         do_request
         expect(flash[:notice]).to be_present
-      end
-
-      it 'sends request email to customer' do
-        message_delivery = instance_double(ActionMailer::MessageDelivery, deliver_later: nil)
-        allow(RequestMailer).to receive(:send_request).with(kind_of(Request)).
-          and_return(message_delivery)
-
-        do_request
-
-        expect(message_delivery).to have_received(:deliver_later)
       end
     end
 

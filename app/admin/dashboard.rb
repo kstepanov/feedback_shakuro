@@ -5,7 +5,7 @@ ActiveAdmin.register_page 'Dashboard' do
     columns do
       column do
         panel link_to('Recent Feedbacks', admin_feedbacks_path) do
-          table_for Feedback.recent(5) do
+          table_for Admin::Feedback.recent(5) do
             column(:id) { |feedback| auto_link(feedback, feedback.id) }
             column :project_name
             column :feature_name
@@ -17,7 +17,7 @@ ActiveAdmin.register_page 'Dashboard' do
 
       column do
         panel link_to('Recent Requests', admin_requests_path) do
-          table_for Request.recent(5) do
+          table_for Admin::Request.recent(5) do
             column(:id) { |request| auto_link(request, request.id) }
             column :project_name
             column :feature_name

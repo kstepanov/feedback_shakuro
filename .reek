@@ -1,9 +1,8 @@
+exclude_paths:
+  - db/migrate
 
 IrresponsibleModule:
   enabled: false
 
 UtilityFunction:
   public_methods_only: true
-
-exclude_paths:
-  - db/migrate

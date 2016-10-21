@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 
-gem 'sqlite3', group: [:development, :test]
+gem 'pg', '~> 0.19', group: [:development, :test]
 gem 'mysql2', '~> 0.4.4', group: :production
 
 gem 'slim-rails', '~> 3.1.0'
@@ -52,6 +52,10 @@ group :test do
   gem 'fuubar'
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
