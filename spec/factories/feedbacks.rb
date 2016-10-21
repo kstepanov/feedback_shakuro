@@ -6,5 +6,6 @@ FactoryGirl.define do
     project_name 'project name'
     feature_name 'feature name'
     details 'details'
+    rate 5
   end
 end

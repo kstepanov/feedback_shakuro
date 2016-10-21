@@ -4,7 +4,7 @@ class FeedbackMailerPreview < ActionMailer::Preview
   def send_feedback
     admin_user = FactoryGirl.build(:admin_user)
     req = FactoryGirl.build(:request, admin_user: admin_user)
-    feedback = FactoryGirl.build(:feedback, request: req, rate: 12345)
+    feedback = FactoryGirl.build(:feedback, request: req)
     FeedbackMailer.send_feedback(feedback)
   end
 end
