@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RequestMailer, type: :mailer do
   describe 'send_request' do
-    subject(:mail) { RequestMailer.send_request(req) }
+    subject(:mail) { described_class.send_request(req) }
     let(:req) { build(:request) }
 
     it 'has wright `subject` header' do

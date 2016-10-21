@@ -18,15 +18,8 @@ class RequestMailer < ApplicationMailer
   end
 
   def subject
-    ['Feedback request for your', project, feature].join(' ')
-  end
-
-  def project
-    "project '#{req.project_name}'"
-  end
-
-  def feature
-    "feature '#{req.feature_name}'"
+    'Feedback request for your project ' \
+    "'#{req.project_name}' feature '#{req.feature_name}'"
   end
 
   def feedback_url

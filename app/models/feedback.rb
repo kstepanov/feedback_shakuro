@@ -8,4 +8,8 @@ class Feedback < ApplicationRecord
     self.attributes = request.feedback_attributes
     super
   end
+
+  def customer_name=(name)
+    super(name.to_s.titleize)
+  end
 end

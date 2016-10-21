@@ -1,0 +1,6 @@
+p Hi #{@feedback.request.admin_user.email}
+
+p Please be aware that you got next feedback from customer #{@feedback.customer_name} for project &lt;#{@feedback.project_name}&gt; feature &lt;#{@feedback.feature_name}&gt;: #{@feedback.rate}.
+
+p And next comments:
+pre= @feedback.details

@@ -6,3 +6,11 @@ IrresponsibleModule:
 
 UtilityFunction:
   public_methods_only: true
+  exclude:
+    - "FeedbackMailerPreview#send_feedback"
+    - "RequestMailerPreview#send_request"
+
+FeatureEnvy:
+  exclude:
+    - "Feedback#customer_name="
+    - "Request#customer_name="
