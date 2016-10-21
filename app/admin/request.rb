@@ -32,6 +32,7 @@ ActiveAdmin.register Admin::Request, as: 'Request' do
       row :feature_name
       row :customer_name
       row :customer_email
+      row :uid
       row :created_at
     end
   end

@@ -30,26 +30,6 @@ RSpec.describe FeedbackCreator do
         expect(service.feedback.request).to eq request
       end
 
-      it 'assigns customer_name' do
-        create
-        expect(service.feedback.customer_name).to eq request.customer_name
-      end
-
-      it 'assigns customer_email' do
-        create
-        expect(service.feedback.customer_email).to eq request.customer_email
-      end
-
-      it 'assigns project_name' do
-        create
-        expect(service.feedback.project_name).to eq request.project_name
-      end
-
-      it 'assigns feature_name' do
-        create
-        expect(service.feedback.feature_name).to eq request.feature_name
-      end
-
       it 'sends email to customer' do
         message_delivery = instance_double(ActionMailer::MessageDelivery, deliver_later: nil)
         allow(FeedbackMailer).to receive(:send_feedback).with(kind_of(Feedback)).

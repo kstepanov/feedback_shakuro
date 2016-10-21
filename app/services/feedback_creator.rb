@@ -7,10 +7,6 @@ class FeedbackCreator
 
   def create(request)
     feedback.request = request
-    feedback.attributes = request.slice(
-      :customer_name, :customer_email, :project_name, :feature_name
-    )
-
     success = feedback.save
 
     on_success if success

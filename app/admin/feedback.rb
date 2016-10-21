@@ -1,6 +1,6 @@
 ActiveAdmin.register Admin::Feedback, as: 'Feedback' do
   permit_params :customer_name, :customer_email, :project_name, :feature_name, :rate, :details
-  actions :index, :show, :edit, :update
+  actions :index, :show, :edit, :update, :destroy
 
   index do
     selectable_column
