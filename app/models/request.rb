@@ -14,10 +14,6 @@ class Request < ApplicationRecord
     end
   end
 
-  def feedback_attributes
-    slice(:customer_name, :customer_email, :project_name, :feature_name)
-  end
-
   def customer_name=(name)
     super(name.to_s.titleize)
   end

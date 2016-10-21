@@ -10,12 +10,11 @@ RSpec.describe RequestCreator do
     }
   end
   let(:invalid_params) { {} }
-  let(:service) { described_class.new(params, admin_user) }
+  let(:service) { described_class.new(params) }
 
   describe '#request' do
     subject(:request) { service.request }
     let(:params) { {} }
-    let(:admin_user) { nil }
 
     it 'is instance of Request' do
       expect(request).to be_a Request
@@ -23,7 +22,7 @@ RSpec.describe RequestCreator do
   end
 
   describe '#create' do
-    subject(:create) { service.create }
+    subject(:create) { service.create(admin_user) }
     let(:admin_user) { build :admin_user }
 
     context 'with valid params' do

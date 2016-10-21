@@ -25,11 +25,6 @@ RSpec.describe FeedbacksController, type: :controller do
         expect { do_request }.to change(Feedback, :count).by(1)
       end
 
-      it 'assigns a newly created feedback as @feedback' do
-        do_request
-        expect(assigns(:feedback)).to eq Feedback.last
-      end
-
       it 'redirects to the thank you page' do
         do_request
         expect(response).to redirect_to(thank_you_path)

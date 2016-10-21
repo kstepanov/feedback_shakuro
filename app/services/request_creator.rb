@@ -1,14 +1,14 @@
 class RequestCreator
-  attr_reader :request, :admin_user
+  attr_reader :request
 
-  def initialize(params, admin_user)
+  def initialize(params)
     @request = Request.new(params)
-    @admin_user = admin_user
   end
 
-  def create
+  def create(admin_user)
     request.uid = Request.uid
     request.admin_user = admin_user
+
     success = request.save
 
     on_success if success

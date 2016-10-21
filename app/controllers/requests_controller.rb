@@ -8,9 +8,9 @@ class RequestsController < InheritedResources::Base
   end
 
   def create
-    creator = RequestCreator.new(request_params, current_admin_user)
+    creator = RequestCreator.new(request_params)
 
-    if creator.create
+    if creator.create(current_admin_user)
       redirect_to new_request_path, flash: { notice: 'Request sucessfully sent' }
     else
       @req = creator.request

@@ -3,10 +3,10 @@ ActiveAdmin.register Admin::Request, as: 'Request' do
 
   controller do
     def create
-      request_creator = RequestCreator.new(permitted_params['admin_request'], current_admin_user)
+      request_creator = RequestCreator.new(permitted_params['admin_request'])
       @resource = request_creator.request
 
-      if request_creator.create
+      if request_creator.create(current_admin_user)
         redirect_to admin_requests_path, flash: { notice: 'Request sucessfully sent' }
       else
         render :new
