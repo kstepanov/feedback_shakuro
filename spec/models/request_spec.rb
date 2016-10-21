@@ -32,4 +32,9 @@ RSpec.describe Request, type: :model do
   it 'prohibit bad email' do
     is_expected.not_to allow_value('exampleemail.com').for(:customer_email)
   end
+
+  it 'titleizes customer name' do
+    name = described_class.new(customer_name: 'test jr').customer_name
+    expect(name).to eq 'Test Jr'
+  end
 end
