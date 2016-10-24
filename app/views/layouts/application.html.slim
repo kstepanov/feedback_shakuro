@@ -25,6 +25,16 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .container
+      header.header
+        .content
+          .row
+            .col-sm-11
+              .logo
+                a.site-logo[href="https://shakuro.com"] shakuro
+            .col-sm-1
+              - if admin_user_signed_in?
+                = link_to 'Log out', destroy_admin_user_session_path
+
       .top-buffer
       .row
         - if notice.present?

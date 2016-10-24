@@ -13,6 +13,67 @@
  *= require_self
  */
 
+.header .logo {
+  position: relative;
+  display: inline-block;
+  height: 28px;
+  float: left;
+  z-index: 2;
+  margin: 18px 0 0;
+}
+
+.header .site-logo {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: .2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: 'Varela Round', sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 0 0 0 37px;
+}
+
+.header .site-logo:before {
+    content: '';
+    position: absolute;
+    background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
+    background-position: 0 -3638px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 26px;
+    width: 27px;
+    display: block;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
+.header .site-logo:after {
+    content: '';
+    position: absolute;
+    background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
+    background-position: 0 -3171px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 26px;
+    width: 27px;
+    display: block;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
 .top-buffer {
   margin-top: 15px
 }
