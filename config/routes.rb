@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :feedbacks, only: [:new, :create]
 
   get 'thank_you', to: 'pages#thank_you'
+  get 'requests', to: 'requests#new'
 
   root to: 'requests#new'
 end

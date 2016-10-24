@@ -1,22 +1,19 @@
 = form_for @req do |f|
-  - if @req.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@req.errors.count, "error")} prohibited this request from being saved:"
-      ul
-        - @req.errors.full_messages.each do |message|
-          li = message
+  - @req.errors.full_messages.each do |message|
+    .alert.alert-danger
+      span.sr-only Error:
+      = message
 
-  .field
-    = f.label :project_name
-    = f.text_field :project_name
-  .field
-    = f.label :feature_name
-    = f.text_field :feature_name
-  .field
-    = f.label :customer_name
-    = f.text_field :customer_name
-  .field
-    = f.label :customer_email
-    = f.text_field :customer_email
+  label[for="project_name"] Project Name
+  = f.text_field :project_name, class: 'form-control'
 
-  .actions = f.submit
+  label[for="feature_name"] Feature Name
+  = f.text_field :feature_name, class: 'form-control'
+
+  label[for="customer_name"] Customer Name
+  = f.text_field :customer_name, class: 'form-control'
+
+  label[for="customer_email"] Customer Email
+  = f.text_field :customer_email, class: 'form-control', placeholder: 'customer@email.com'
+
+  = f.submit class: 'btn btn-default', value: 'Send Request'

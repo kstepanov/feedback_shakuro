@@ -9,11 +9,12 @@ class RequestsController < InheritedResources::Base
 
   def create
     creator = RequestCreator.new(request_params)
+    @req = creator.request
 
     if creator.create(current_admin_user)
-      redirect_to new_request_path, flash: { notice: 'Request sucessfully sent' }
+      notice = "Request sucessfully sent (#{new_feedback_url(uid: req.uid)})"
+      redirect_to new_request_path, flash: { notice: notice }
     else
-      @req = creator.request
       render :new
     end
   end
