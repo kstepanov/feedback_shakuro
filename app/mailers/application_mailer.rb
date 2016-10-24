@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'support@shakuro.com'
+  default from: Rails.application.secrets.from_email
   layout 'mailer'
 end

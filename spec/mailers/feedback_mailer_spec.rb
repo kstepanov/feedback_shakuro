@@ -15,15 +15,15 @@ RSpec.describe FeedbackMailer, type: :mailer do
       )
     end
 
-    it 'has wright `to` header' do
+    it 'has right `to` header' do
       expect(mail.to).to eq([admin_user.email])
     end
 
-    it 'has wright `from` header' do
-      expect(mail.from).to eq(['support@shakuro.com'])
+    it 'has right `from` header' do
+      expect(mail.from).to eq([Rails.application.secrets.from_email])
     end
 
-    it 'has wright `reply_to` header' do
+    it 'has right `reply_to` header' do
       expect(mail.reply_to).to eq([feedback.customer_email])
     end
 

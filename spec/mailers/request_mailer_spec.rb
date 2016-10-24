@@ -11,12 +11,12 @@ RSpec.describe RequestMailer, type: :mailer do
       )
     end
 
-    it 'has wright `to` header' do
+    it 'has right `to` header' do
       expect(mail.to).to eq([req.customer_email])
     end
 
-    it 'has wright `from` header' do
-      expect(mail.from).to eq(['support@shakuro.com'])
+    it 'has right `from` header' do
+      expect(mail.from).to eq([Rails.application.secrets.from_email])
     end
 
     it 'renders the project name' do
