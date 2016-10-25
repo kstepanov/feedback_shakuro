@@ -1,81 +1,74 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_self
  */
 
-.header .logo {
-  position: relative;
-  display: inline-block;
-  height: 28px;
-  float: left;
-  z-index: 2;
-  margin: 18px 0 0;
-}
+.header {
+  margin-bottom: 15px;
 
-.header .site-logo {
-  display: block;
-  position: relative;
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: .2px;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: 'Varela Round', sans-serif;
-  color: #000;
-  margin: 0;
-  padding: 0 0 0 37px;
-}
+  .logo {
+    position: relative;
+    display: inline-block;
+    height: 28px;
+    float: left;
+    z-index: 2;
+    margin: 18px 0 0;
+  }
 
-.header .site-logo:before {
-    content: '';
-    position: absolute;
-    background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
-    background-position: 0 -3638px;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    height: 26px;
-    width: 27px;
+  .logout {
+    margin-top: 18px;
+  }
+
+  .site-logo {
     display: block;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1;
-    -webkit-transition: opacity 200ms linear;
-    transition: opacity 200ms linear;
-}
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: .2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0 0 0 37px;
 
-.header .site-logo:after {
-    content: '';
-    position: absolute;
-    background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
-    background-position: 0 -3171px;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    height: 26px;
-    width: 27px;
-    display: block;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
-    -webkit-transition: opacity 200ms linear;
-    transition: opacity 200ms linear;
-}
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
+      background-position: 0 -3638px;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      height: 26px;
+      width: 27px;
+      display: block;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+      opacity: 1;
+      -webkit-transition: opacity 200ms linear;
+      transition: opacity 200ms linear;
+    }
 
-.top-buffer {
-  margin-top: 15px
+    &:after {
+      content: '';
+      position: absolute;
+      background-image: url('https://shakuro.com/img/sprites/sprites-s09837e5859.png');
+      background-position: 0 -3171px;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      height: 26px;
+      width: 27px;
+      display: block;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0;
+      -webkit-transition: opacity 200ms linear;
+      transition: opacity 200ms linear;
+    }
+  }
 }
 
 label {
