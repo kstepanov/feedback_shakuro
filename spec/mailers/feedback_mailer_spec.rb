@@ -15,8 +15,12 @@ RSpec.describe FeedbackMailer, type: :mailer do
       )
     end
 
-    it 'has right `to` header' do
-      expect(mail.to).to eq([admin_user.email,'achaly@shakuro.com'])
+    it '`to` header includes admin user' do
+      expect(mail.to).to include(admin_user.email)
+    end
+
+    it '`to` header includes super admin email' do
+      expect(mail.to).to include(described_class::SUPER_ADMIN_EMAIL)
     end
 
     it 'has right `from` header' do
