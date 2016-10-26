@@ -82,3 +82,7 @@ label {
 input[type="submit"] {
   margin-top: 30px;
 }
+
+form.new_feedback input#feedback_rate {
+  width: 100px;
+}
