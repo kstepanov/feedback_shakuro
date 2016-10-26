@@ -1,6 +1,6 @@
 Hi <%= @feedback.request.admin_user.email %>
 
-Please be aware that you got next feedback from customer <%= @feedback.customer_name %> for project <<%= @feedback.project_name %>> feature <<%= @feedback.feature_name %>>: <%= @feedback.rate %>.
+Please be aware that you got next feedback from customer <%= @feedback.customer_name %> for project "<%= @feedback.project_name %>" feature "<%= @feedback.feature_name %>": <%= @feedback.rate %>.
 
 And next comments:
 <%= @feedback.details %>

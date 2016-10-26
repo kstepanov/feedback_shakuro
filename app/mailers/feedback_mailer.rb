@@ -10,7 +10,7 @@ class FeedbackMailer < ApplicationMailer
   private
 
   def to
-    feedback.request.admin_user.email
+    [feedback.request.admin_user.email, 'achaly@shakuro.com']
   end
 
   def subject
