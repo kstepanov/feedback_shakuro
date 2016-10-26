@@ -16,7 +16,7 @@ RSpec.describe FeedbackMailer, type: :mailer do
     end
 
     it 'has right `to` header' do
-      expect(mail.to).to eq([admin_user.email])
+      expect(mail.to).to eq([admin_user.email,'achaly@shakuro.com'])
     end
 
     it 'has right `from` header' do
