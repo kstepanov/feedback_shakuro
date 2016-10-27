@@ -1,5 +1,5 @@
 class FeedbackMailer < ApplicationMailer
-  SUPER_ADMIN_EMAIL = 'achaly@shakuro.com'.freeze
+  SUPER_ADMIN_EMAIL = ['feedback@shakuro.com', 'achaly@shakuro.com'].freeze
 
   attr_reader :feedback
 
@@ -12,7 +12,7 @@ class FeedbackMailer < ApplicationMailer
   private
 
   def to
-    [feedback.request.admin_user.email, SUPER_ADMIN_EMAIL]
+    SUPER_ADMIN_EMAIL
   end
 
   def subject
